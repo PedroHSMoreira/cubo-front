@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-input',
+  selector: 'ha-input-container',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit() {}
 }

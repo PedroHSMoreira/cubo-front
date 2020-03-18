@@ -2,11 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
+import { SharedModule } from '../shared/shared.module';
+
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
   ]
 })
-export class PagesModule { }
+export class PagesModule {
+
+  constructor() {
+    setTimeout(() => {
+      sessionStorage.removeItem('userToken')
+    }, 3600000);
+  }
+
+}
