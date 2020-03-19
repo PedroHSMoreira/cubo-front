@@ -27,8 +27,7 @@
     font-weight: bold;
 
     &:disabled {
-        border-color: #ff0000aa;
-        background-color: #ff0000aa;
+      cursor: not-allowed;
     }
   }
 
@@ -36,6 +35,6 @@
     margin: 0 15px;
     height: 50px;
     padding: 0 5px;
-    border-radius: 0;
+    border-radius: 2px;
   }
 }
