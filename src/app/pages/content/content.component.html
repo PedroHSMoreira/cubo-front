@@ -1,2 +1,41 @@
-<p>content works!</p>
-<h1>ola</h1>
+<div class="content-title">
+    <h1 class="cont-title">DATA</h1>
+    <p class="cont-sub">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</div>
+<div class="content">
+    <div class="col-md-8">
+        <table>
+            <tr>
+                <th></th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Jill</td>
+                <td>Smith</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Eve</td>
+                <td>Jackson</td>
+                <td>94</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>John</td>
+                <td>Doe</td>
+                <td>80</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-4">
+        <div class="chart-wrapper">
+            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+                [options]="chartOptions">
+            </canvas>
+        </div>
+    </div>
+</div>

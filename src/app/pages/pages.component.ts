@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'ha-pages',
-    templateUrl: 'pages.component.html'
+    selector: 'app-pages',
+    templateUrl: 'pages.component.html',
+    styleUrls: ['./pages.component.scss']
 })
 
 export class PagesComponent implements OnInit {

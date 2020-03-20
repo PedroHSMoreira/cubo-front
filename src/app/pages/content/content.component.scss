@@ -1,0 +1,42 @@
+.content-title {
+  margin: 5% auto;
+}
+
+.cont-title {
+  text-align: center;
+}
+
+.cont-sub {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+table {
+    width: 100%;
+
+    td {
+        &:first-child {
+            width: 5%;
+        }
+    }
+  }
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 15px;
+    text-align: left;
+  }
+
+  .chart-wrapper {
+      margin-right: 50%;
+      width: 80%;
+  }
