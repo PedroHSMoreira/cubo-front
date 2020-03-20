@@ -7,6 +7,7 @@ import { ContentComponent } from './content/content.component';
 import { Routes, RouterModule } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { TopBarComponent } from './topbar/topbar.component';
+import { TableComponent } from './content/table/table.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [PagesComponent, ContentComponent, TopBarComponent],
+  declarations: [PagesComponent, ContentComponent, TopBarComponent, TableComponent],
   imports: [
     CommonModule,
     SharedModule,

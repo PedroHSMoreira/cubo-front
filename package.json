@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "author": "Pedro Moreira (moreiraphs@outlook.com)",
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",

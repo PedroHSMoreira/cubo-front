@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { PartService } from '../services/part.service';
+import { Participation } from '../models/participation.model';
 
 @Component({
   selector: 'app-topbar',
@@ -10,7 +12,7 @@ export class TopBarComponent implements OnInit {
 
 participationForm: FormGroup
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private partService: PartService) { }
 
   ngOnInit() {
     this.participationForm = this.fb.group({
@@ -21,8 +23,8 @@ participationForm: FormGroup
   }
 
 
-  subForm(value: any) {
-    console.log(value)
+  subForm(value: Participation) {
+    this.partService.create(value).subscribe(part => console.log(part))
     this.participationForm.reset()
   }
 }

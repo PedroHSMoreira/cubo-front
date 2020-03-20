@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartType, ChartOptions } from "chart.js";
 import { MultiDataSet, Label } from "ng2-charts";
+import { PartService } from '../services/part.service';
+import { Participation } from '../models/participation.model';
 
 @Component({
   selector: 'app-content',
@@ -26,9 +28,17 @@ export class ContentComponent implements OnInit {
       }
     }
   }
-  constructor() { }
+
+  participations: Participation[]
+  
+  constructor(private partService: PartService) { }
 
   ngOnInit(): void {
+    this.get()
+  }
+
+  get() {
+    this.partService.getAll().subscribe(part => this.participations = part)
   }
 
 }

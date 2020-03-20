@@ -1,0 +1,15 @@
+<table>
+    <tr>
+        <th></th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+    </tr>
+    <tr *ngFor="let part of participations; index as i">
+        <td>{{i + 1}}</td>
+        <td>{{ part.firstName }}</td>
+        <td>{{ part.lastName }}</td>
+        <td>{{ part.participation }}</td>
+    </tr>
+    
+</table>
