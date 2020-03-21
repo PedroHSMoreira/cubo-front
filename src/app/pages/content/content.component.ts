@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartType, ChartOptions } from "chart.js";
-import { MultiDataSet, Label } from "ng2-charts";
 import { PartService } from '../services/part.service';
 import { Participation } from '../models/participation.model';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-content',
@@ -11,34 +10,28 @@ import { Participation } from '../models/participation.model';
 })
 export class ContentComponent implements OnInit {
 
-
-  doughnutChartLabels: Label[] = ['Pedro', 'Elisa', 'Letícia', 'Outro', 'teste'];
-  doughnutChartData: MultiDataSet = [
-    [55, 25, 20, 20, 10]
-  ];
-  doughnutChartType: ChartType = 'doughnut';
-  
-  chartOptions: ChartOptions = {
-    legend: {
-      position: 'right'
-    },
-    layout: {
-      padding: {
-        right: 0
-      }
-    }
-  }
-
   participations: Participation[]
-  
+  labels: string[]
+  data: number[]
+
   constructor(private partService: PartService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.get()
   }
 
   get() {
-    this.partService.getAll().subscribe(part => this.participations = part)
+    this.partService.getAll().pipe(take(1))
+      .subscribe(part => {
+        this.participations = part
+        this.labels = part.map(val => `${val.firstName} ${val.lastName}`)
+        this.data = part.map(val => val.participation)
+      })
+  }
+
+  addNewPart(part) {
+    console.log(part)
+    this.participations.push(part)
   }
 
 }

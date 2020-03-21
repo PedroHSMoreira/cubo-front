@@ -1,0 +1,5 @@
+<div class="chart-wrapper">
+    <canvas *ngIf="participations != undefined" baseChart [chartType]="doughnutChartType" [labels]="labels()"
+        [data]="chartData()" [options]="chartOptions" [colors]=doughnutChartColors>
+    </canvas>
+</div>

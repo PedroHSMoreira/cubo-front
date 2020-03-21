@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { TopBarComponent } from './topbar/topbar.component';
 import { TableComponent } from './content/table/table.component';
+import { ChartComponent } from './content/chart/chart.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [PagesComponent, ContentComponent, TopBarComponent, TableComponent],
+  declarations: [PagesComponent, ContentComponent, TopBarComponent, TableComponent, ChartComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -25,10 +26,6 @@ const routes: Routes = [
 })
 export class PagesModule {
 
-  constructor() {
-    setTimeout(() => {
-      sessionStorage.removeItem('userToken')
-    }, 3600000);
-  }
+  constructor() {}
 
 }

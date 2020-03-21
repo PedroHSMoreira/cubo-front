@@ -1,17 +1,26 @@
 table {
-    width: 100%;
+  width: 100%;
 
-    td {
-        &:first-child {
-            width: 5%;
-        }
-    }
-  }
-  table, th, td {
-    border: 1px solid black;
+  th {
+    border: 1px solid #ccc;
     border-collapse: collapse;
-  }
-  th, td {
     padding: 15px;
     text-align: left;
   }
+
+  td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    padding: 15px;
+    text-align: left;
+
+    &:first-child {
+      width: 5%;
+      text-align: center;
+    }
+    &:last-child {
+      width: 5%;
+      text-align: center;
+    }
+  }
+}

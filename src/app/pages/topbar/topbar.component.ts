@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PartService } from '../services/part.service';
 import { Participation } from '../models/participation.model';
+
 
 @Component({
   selector: 'app-topbar',
@@ -10,7 +11,9 @@ import { Participation } from '../models/participation.model';
 })
 export class TopBarComponent implements OnInit {
 
-participationForm: FormGroup
+  @Output() addPart = new EventEmitter<Participation>()
+
+  participationForm: FormGroup
 
   constructor(private fb: FormBuilder, private partService: PartService) { }
 
@@ -18,13 +21,15 @@ participationForm: FormGroup
     this.participationForm = this.fb.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      participation: ['', [Validators.required]]
+      participation: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]]
     })
   }
 
 
   subForm(value: Participation) {
-    this.partService.create(value).subscribe(part => console.log(part))
+    this.partService.create(value).subscribe(part => {
+      this.addPart.emit(part)
+    })
     this.participationForm.reset()
   }
 }

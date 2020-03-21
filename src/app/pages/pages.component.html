@@ -1,4 +1,4 @@
-<app-topbar></app-topbar>
+<app-topbar (addPart)="part.addNewPart($event)"></app-topbar>
 <div class="wrapper">
-    <app-content></app-content>
+    <app-content #part></app-content>
 </div>
