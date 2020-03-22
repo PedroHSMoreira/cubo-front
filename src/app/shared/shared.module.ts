@@ -5,10 +5,11 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { ChartsModule } from "ng2-charts";
 
 import { InputComponent } from './input/input.component';
+import { SnackbarComponent } from './snackbar/snackbar.component';
 
 
 @NgModule({
-  declarations: [InputComponent],
+  declarations: [InputComponent, SnackbarComponent],
   imports: [
     ChartsModule,
     CommonModule,
@@ -17,6 +18,7 @@ import { InputComponent } from './input/input.component';
   ],
   exports: [
     InputComponent,
+    SnackbarComponent,
     ChartsModule,
     ReactiveFormsModule
   ]

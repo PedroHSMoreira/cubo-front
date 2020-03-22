@@ -1,7 +1,7 @@
-<div class="form-group">
+<div class="form-group" [ngClass]="{'was-validated': hasSuccess()}">
     <div class="col-md-12">
         <ng-content></ng-content>
-        <div class="valid-feedback"></div>
-        <div class="invalid-feedback"></div>
+        <span *ngIf="showTip && hasError()" class="text-danger ml-3 mt-0">{{ errorMessage }}</span>
+        <span *ngIf="showTip && hasSuccess()" class="valid-feedback ml-3 mt-0">Ok</span>
     </div>
 </div>

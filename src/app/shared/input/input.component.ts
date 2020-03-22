@@ -8,9 +8,9 @@ import { FormControlName } from '@angular/forms';
 })
 export class InputComponent implements OnInit, AfterContentInit {
 
-  @Input() errorMessage: string
   @Input() showTip: boolean = true
 
+  errorMessage: string
   input: any
 
   @ContentChild(FormControlName, { static: false }) control: FormControlName
@@ -29,7 +29,10 @@ export class InputComponent implements OnInit, AfterContentInit {
   }
 
   hasError(): boolean {
-    return this.input.invalid && (this.input.dirty || this.input.touched)
+    let isRequired = this.input.invalid && (this.input.value == '') && (this.input.dirty || this.input.touched)
+    let isInvalid = this.input.invalid && (this.input.dirty || this.input.touched)
+    this.errorMessage = isRequired ? 'Field is required!' : 'Field is invalid, enter a number!'
+    return isRequired || isInvalid
   }
 
 }

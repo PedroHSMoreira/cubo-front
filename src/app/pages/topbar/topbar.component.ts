@@ -27,9 +27,7 @@ export class TopBarComponent implements OnInit {
 
 
   subForm(value: Participation) {
-    this.partService.create(value).subscribe(part => {
-      this.addPart.emit(part)
-    })
+    this.addPart.emit(value)
     this.participationForm.reset()
   }
 }
