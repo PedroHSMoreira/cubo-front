@@ -31,7 +31,7 @@ export class InputComponent implements OnInit, AfterContentInit {
   hasError(): boolean {
     let isRequired = this.input.invalid && (this.input.value == '') && (this.input.dirty || this.input.touched)
     let isInvalid = this.input.invalid && (this.input.dirty || this.input.touched)
-    this.errorMessage = isRequired ? 'Field is required!' : 'Field is invalid, enter a number!'
+    this.errorMessage = isRequired ? 'Required field!' : 'Invalid field!'
     return isRequired || isInvalid
   }
 

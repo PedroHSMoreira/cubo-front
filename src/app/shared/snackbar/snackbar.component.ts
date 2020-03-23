@@ -26,15 +26,17 @@ import { NotificationService } from "./services/notification.service";
 })
 export class SnackbarComponent implements OnInit {
 
-  @Input() message: string = 'Hello there!'
+  @Input() message: string
+  classAlert: string
   snackVisibility: string = 'hidden'
 
   constructor(private notification: NotificationService) { }
 
   ngOnInit() {
     this.notification.notifier.pipe(
-      tap(message => {
-        this.message = message
+      tap(data => {
+        this.message = data.message
+        this.classAlert = data.type
         this.snackVisibility = 'visible'
       }),
       switchMap(message => timer(3000))

@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { PartService } from '../services/part.service';
 import { Participation } from '../models/participation.model';
 
 
@@ -15,7 +14,7 @@ export class TopBarComponent implements OnInit {
 
   participationForm: FormGroup
 
-  constructor(private fb: FormBuilder, private partService: PartService) { }
+  constructor(private fb: FormBuilder,) { }
 
   ngOnInit() {
     this.participationForm = this.fb.group({

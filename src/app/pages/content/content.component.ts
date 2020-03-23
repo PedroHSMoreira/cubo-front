@@ -33,9 +33,10 @@ export class ContentComponent implements OnInit {
   addNewPart(part: Participation) {
     let total = this.participations.map(el => Number(el.participation)).reduce((prev, value) => prev + value, 0)
     if ((total + Number(part.participation)) > 100) {
+      this.notification.notify(`Maximum participation has been achieved`, 'danger')
     } else {
       this.partService.create(part).subscribe(part => {
-        this.notification.notify(`${part.firstName} ${part.lastName} is added!`)
+        this.notification.notify(`${part.firstName} ${part.lastName} is added!`, 'success')
         this.participations.push(part)
       })
     }

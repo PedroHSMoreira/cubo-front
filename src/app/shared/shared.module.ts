@@ -14,7 +14,6 @@ import { SnackbarComponent } from './snackbar/snackbar.component';
     ChartsModule,
     CommonModule,
     ReactiveFormsModule,
-    
   ],
   exports: [
     InputComponent,

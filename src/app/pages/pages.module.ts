@@ -12,7 +12,7 @@ import { ChartComponent } from './content/chart/chart.component';
 
 
 const routes: Routes = [
-  { path: '', component: PagesComponent }
+  { path: 'home', component: PagesComponent }
 ]
 
 

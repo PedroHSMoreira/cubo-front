@@ -1,0 +1,27 @@
+<div class="container-login">
+    <div class="box-login">
+        <div class="login-title">
+            <p>Please, enter your credentials to continue!</p>
+        </div>
+        <div class="login-content">
+            <form [formGroup]="loginForm">
+                <div class="login-form pb-3">
+                    <input-container>
+                        <input type="text" placeholder="Email" class="form-control" formControlName="email">
+                    </input-container>
+                </div>
+                <div class="login-form">
+                    <input-container>
+                        <input type="text" placeholder="Password" class="form-control" formControlName="password">
+                    </input-container>
+                </div>
+            </form>
+            <div class="login-actions">
+                <div class="col-4 ml-auto">
+                    <button (click)="login()" type="submit" [disabled]="loginForm.invalid"
+                        class="btn btn-primary btn-block btn-flat">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
